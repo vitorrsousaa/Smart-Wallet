@@ -23,7 +23,7 @@ export const NavLink = ({ icon, href, children }: NavLinkProps) => {
   if (wideVersion) {
     return (
       <ActiveLink to={href}>
-        <Box display="flex" align="center" mr="2">
+        <Box display="flex" align="center" mr="1">
           <Icon as={icon} fontSize="24" />
         </Box>
       </ActiveLink>
@@ -31,7 +31,7 @@ export const NavLink = ({ icon, href, children }: NavLinkProps) => {
   } else {
     return (
       <ActiveLink to={href}>
-        <Box display="flex" align="center" mr="2">
+        <Box display="flex" align="center" mr="1">
           <Icon as={icon} fontSize="24" />
           <Text ml="4">{children}</Text>
         </Box>

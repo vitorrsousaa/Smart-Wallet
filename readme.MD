@@ -51,8 +51,8 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - Protótipo: **[Figma](https://www.figma.com/)** → **[Protótipo (Smart Wallet)](https://www.figma.com/file/TNpKzYbsu9wF0dche57WAB/Smart-Wallet?node-id=3%3A28)**
 - API: **[HG Finance](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1)** - **[Alpha Vantage](https://www.alphavantage.co/)**
 - Editor: **[Visual Studio Code](https://code.visualstudio.com/)** → Extensions: **[Prettier](https://prettier.io/)**
-- Banco de dados: **[Insomnia](https://fauna.com/)**
-- Teste de API: **[FaunaDB](https://insomnia.rest/)**
+- Banco de dados: **[FaunaDB](https://insomnia.rest/)**
+- Teste de API: **[Insomnia](https://fauna.com/)**
 - Fontes: **[Comfortaa](https://fonts.google.com/specimen/Comfortaa?query=comforta)**, **[Antic](https://fonts.google.com/specimen/Antic?query=antic)**
 - Versionamento: [Git](https://git-scm.com)
 
@@ -72,7 +72,7 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [ ] Responsividade da GerenciarProdutos;
 - [ ] Consumir API para exibir maiores altas do BOVESPA;
 - [ ] Consumir API para exibir maiores baixas do BOVESPA;
-- [ ] Criar gráfico com os aportes do usuário;
+- [x] Criar gráfico com os aportes do usuário;
 - [ ] Criar gráfico com a evolução do patrimônio do usuário;
 - [x] Iniciar construção do backend;
 - [ ] Realizar a autenticação do usuário;

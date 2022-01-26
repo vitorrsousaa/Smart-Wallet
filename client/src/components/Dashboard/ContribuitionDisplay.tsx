@@ -1,4 +1,5 @@
 import { Box, VStack, Text, useBreakpointValue } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import {
   AreaChart,
   Area,
@@ -8,13 +9,21 @@ import {
   YAxis,
 } from "recharts";
 import { useContribuitions } from "../../contexts/ContribuitionsContext";
+import { api } from "../../services/api";
 
-interface DashboardItemProps {
+interface ContribuitionDisplayProps {
   title: string;
 }
 
-export const DashboardItem = ({ title }: DashboardItemProps) => {
+interface dataProps {
+  contribuitions: number;
+  timeZone: number;
+  date: string;
+}
+
+export const ContribuitionDisplay = ({ title }: ContribuitionDisplayProps) => {
   const { contribuitionsData } = useContribuitions();
+
   const wideVersion = useBreakpointValue({
     base: true,
     md: false,

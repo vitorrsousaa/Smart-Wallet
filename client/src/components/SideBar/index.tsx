@@ -7,9 +7,9 @@ export const SideBar = () => {
       as="aside"
       w={["4.8rem", "", "", "64"]}
       mt="8"
-      mr="5"
+      mr="3"
       h="80vh"
-      p={["0 2rem", " ", "0 2rem", "0 5rem"]}
+      p={["0 1.5rem", " ", "0 2rem", "0 5rem"]}
       borderRight="solid gray 3px"
     >
       <SideBarNav />

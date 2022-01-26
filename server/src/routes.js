@@ -1,9 +1,10 @@
 const { Router } = require("express");
 
-const DataUserController = require("./app/controllers/DataUserController");
+const DataController = require("./app/controllers/DataController");
 
 const router = Router();
 
-router.get("/dataUser", DataUserController.index);
+router.get("/data", DataController.index);
+router.get("/data/:type", DataController.show);
 
 module.exports = router;
