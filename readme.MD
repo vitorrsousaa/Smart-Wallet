@@ -92,17 +92,25 @@ O layout da aplicação está disponível no Figma:
 ### Web
 
 <p align="center">
-  <img alt=""  src="./assets/" width="200px">
+  <img alt=""  src="./assets/Welcome.png" width="600px">
 
-  <img alt="" src="./assets/" width="200px">
+  <img alt="" src="./assets/Home.png" width="600px">
+	
+  <img alt="" src="./assets/Produtos.png" width="600px">
 </p>
 
 ### Mobile
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt=""  src="./assets/" width="400px">
+  <img alt=""  src="./assets/Welcome01- Mobile.png" width="350px" height="800px">
 
-  <img alt="" src="./assets/" width="400px">
+  <img alt="" src="./assets/Welcome02- Mobile.png" width="350px" height="800px" >
+</p>
+
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+  <img alt=""  src="./assets/Home01-Mobile.png" width="350px" height="800px">
+
+  <img alt="" src="./assets/Home02-Mobile.png" width="350px" height="800px" >
 </p>
 
 ## 🚀 Como executar o projeto
