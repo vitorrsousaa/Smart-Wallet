@@ -22,11 +22,6 @@ interface DataProviderProps {
   children: ReactNode;
 }
 
-interface testeProps {
-  name: string;
-  volume: number;
-}
-
 export const ContribuitionsContext = createContext<ContribuitionsContextProps>(
   {} as ContribuitionsContextProps
 );
@@ -35,8 +30,6 @@ export function ContribuitionsProvider({ children }: DataProviderProps) {
   const [contribuitionsData, setContribuitionsData] = useState<
     Contribuitions[]
   >([]);
-
-  const [teste, setTeste] = useState<testeProps[]>([]);
 
   useEffect(() => {
     getContribuitions();
@@ -47,14 +40,6 @@ export function ContribuitionsProvider({ children }: DataProviderProps) {
       .get("/data/contribuitions")
       .then((response) => setContribuitionsData(response.data));
   }
-
-  useEffect(() => {
-    api
-      .get(
-        "https://api.hgbrasil.com/finance/stock_price?key=4704ba4f&symbol=bidi4"
-      )
-      .then((response) => console.log(response.data));
-  }, []);
 
   return (
     <ContribuitionsContext.Provider value={{ contribuitionsData }}>

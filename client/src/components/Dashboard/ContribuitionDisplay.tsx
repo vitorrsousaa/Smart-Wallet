@@ -76,7 +76,7 @@ export const ContribuitionDisplay = ({ title }: ContribuitionDisplayProps) => {
             <XAxis dataKey="date" tickSize={12} tickMargin={6} />
 
             <YAxis
-              tickSize={5}
+              tickSize={4}
               tickFormatter={(value) =>
                 new Intl.NumberFormat("pt-BR", {
                   style: "currency",

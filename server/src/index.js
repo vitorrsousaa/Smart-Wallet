@@ -6,8 +6,6 @@ const cors = require("cors");
 
 const app = express();
 
-app.get("/about", (req, res) => res.send("About page"));
-
 app.use(cors());
 
 app.use(express.json());

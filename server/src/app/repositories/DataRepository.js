@@ -1,88 +1,72 @@
 const data = [
   {
-    name: "BCFF11",
-    type: "funds",
-    volume: 200,
-    price: 70.8,
+    name: "BTC",
+    type: "cripto",
+    volume: 0.9,
+    price: 218572,
     boughtAt: new Date(2022, 0, 11),
+    time: new Date(2022, 0, 11).getTime(),
     month: new Date(2022, 0, 11).getMonth(),
     year: new Date(2022, 0, 11).getFullYear(),
   },
   {
-    name: "BCFF11",
-    volume: 100,
-    type: "funds",
-    price: 68,
+    name: "ETH",
+    type: "cripto",
+    volume: 0.2,
+    price: 218572,
+    boughtAt: new Date(2022, 0, 11),
+    time: new Date(2022, 0, 11).getTime(),
+    month: new Date(2022, 0, 11).getMonth(),
+    year: new Date(2022, 0, 11).getFullYear(),
+  },
+  {
+    name: "BTC",
+    type: "cripto",
+    volume: 0.9,
+    price: 218572,
+    boughtAt: new Date(2021, 3, 11),
+    time: new Date(2021, 3, 11).getTime(),
+    month: new Date(2021, 3, 11).getMonth(),
+    year: new Date(2021, 3, 11).getFullYear(),
+  },
+  {
+    name: "ETH",
+    volume: 0.3,
+    type: "cripto",
+    price: 218572,
     boughtAt: new Date(2021, 0, 11),
+    time: new Date(2021, 0, 11).getTime(),
     month: new Date(2021, 0, 11).getMonth(),
     year: new Date(2021, 0, 11).getFullYear(),
   },
   {
-    name: "BCFF11",
-    type: "funds",
-    volume: 100,
-    price: 71,
-    boughtAt: new Date(2020, 3, 23),
-    month: new Date(2020, 3, 23).getMonth(),
-    year: new Date(2020, 3, 23).getFullYear(),
-  },
-  {
-    name: "BCFF11",
-    type: "funds",
-    volume: 100,
-    price: 69.8,
-    boughtAt: new Date(2021, 4, 25),
-    month: new Date(2021, 4, 25).getMonth(),
-    year: new Date(2021, 4, 25).getFullYear(),
-  },
-  {
-    name: "BCFF11",
-    type: "funds",
-    volume: 100,
-    price: 72,
-    boughtAt: new Date(2021, 11, 20),
-    month: new Date(2021, 11, 20).getMonth(),
-    year: new Date(2021, 11, 20).getFullYear(),
-  },
-  {
-    name: "PETR4",
-    type: "stocks",
-    volume: 100,
-    price: 24,
-    boughtAt: new Date(2021, 11, 20),
-    month: new Date(2021, 11, 20).getMonth(),
-    year: new Date(2021, 11, 20).getFullYear(),
-  },
-  {
-    name: "ABEV3",
-    type: "stocks",
-    volume: 100,
-    price: 24,
-    boughtAt: new Date(2020, 11, 20),
-    month: new Date(2020, 11, 20).getMonth(),
-    year: new Date(2020, 11, 20).getFullYear(),
-  },
-  {
-    name: "ABEV3",
-    type: "stocks",
-    volume: 100,
-    price: 24,
-    boughtAt: new Date(2020, 10, 20),
-    month: new Date(2020, 10, 20).getMonth(),
-    year: new Date(2020, 10, 20).getFullYear(),
+    name: "BTC",
+    volume: 0.8,
+    type: "cripto",
+    price: 218572,
+    boughtAt: new Date(2020, 0, 11),
+    time: new Date(2020, 0, 11).getTime(),
+    month: new Date(2020, 0, 11).getMonth(),
+    year: new Date(2020, 0, 11).getFullYear(),
   },
 ];
 
 class DataRepository {
-  findAll() {
-    return new Promise((resolve) => resolve(data));
+  findAllOrdened() {
+    return new Promise((resolve) => {
+      const resultOrdened = data.sort((a, b) => {
+        return a.time < b.time ? -1 : 1;
+      });
+
+      resolve(resultOrdened);
+    });
   }
 
-  findAllContribuitions() {
+  findAllContribuitions(dataOrdened) {
     return new Promise((resolve) => {
       const totalVolumeStocksByTime = [];
 
-      const getAllOfDates = data.map((entradas) => entradas.boughtAt.getTime());
+      const getAllOfDates = dataOrdened.map((entradas) => entradas.time);
 
       const getSingleDates = getAllOfDates.filter(
         (elementCurrent, indexOfElementCurrent, self) => {
@@ -90,11 +74,11 @@ class DataRepository {
         }
       );
 
-      const getDateFormat = getSingleDates.map((timeZone) => {
+      const getDateFormat = getSingleDates.map((time) => {
         return {
-          month: new Date(timeZone).getUTCMonth(),
-          year: new Date(timeZone).getFullYear(),
-          timeZone: timeZone,
+          month: new Date(time).getUTCMonth(),
+          year: new Date(time).getFullYear(),
+          time: time,
         };
       });
 
@@ -119,28 +103,24 @@ class DataRepository {
           contribuitions: totalVolume,
           month: date.month,
           year: date.year,
-          timeZone: date.timeZone,
+          time: date.time,
         });
       });
 
       const result = totalVolumeStocksByTime.map((entry) => {
         return {
           contribuitions: entry.contribuitions,
-          timeZone: entry.timeZone,
+          time: entry.time,
           date: new Intl.DateTimeFormat("pt-BR", {
             month: "short",
             year: "numeric",
           })
-            .format(new Date(entry.timeZone))
+            .format(new Date(entry.time))
             .replace(". de ", "/"),
         };
       });
 
-      const resultOrdened = result.sort((a, b) => {
-        return a.timeZone < b.timeZone ? -1 : 1;
-      });
-
-      resolve(resultOrdened);
+      resolve(result);
     });
   }
 
@@ -171,6 +151,7 @@ class DataRepository {
 
         totalVolumeStock.push({ name: stock, volume: totalVolume });
       });
+
       resolve(totalVolumeStock);
     });
   }

@@ -21,7 +21,7 @@ export const InfoContent = ({
           {icon}
         </Circle>
         <Flex align="flex-start" direction="column">
-          <Text>{title}</Text>
+          <Text fontWeight="bold">{title}</Text>
           <Text color="gray.300" fontSize="12px">
             {value}
           </Text>

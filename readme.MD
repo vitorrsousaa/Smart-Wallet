@@ -18,7 +18,7 @@
 
 ## 💻 Sobre o smart wallet
 
-O Smart Wallet 💻 é uma forma de conectar os investidores até a sua carteira de investimentos de maneira rápida e simples. Sem demandar muito tempo do investidor e exigir complexidade durante as tarefas.
+O Smart Wallet 💻 é uma forma de conectar os investidores até a sua carteira de investimentos em criptomoedas de maneira rápida e simples. Sem demandar muito tempo do investidor e exigir complexidade durante as tarefas.
 
 Projeto desenvolvido com o objetivo de expandir o desenvolvimento na construção de API's e expandir o conhecimento na criação de dashboard automatizados.
 
@@ -49,7 +49,7 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 #### **Utilitários**
 
 - Protótipo: **[Figma](https://www.figma.com/)** → **[Protótipo (Smart Wallet)](https://www.figma.com/file/TNpKzYbsu9wF0dche57WAB/Smart-Wallet?node-id=3%3A28)**
-- API: **[HG Finance](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1)** - **[Alpha Vantage](https://www.alphavantage.co/)**
+- API: **[Mercado Bitcoin](https://www.mercadobitcoin.com.br/api-doc/)**
 - Editor: **[Visual Studio Code](https://code.visualstudio.com/)** → Extensions: **[Prettier](https://prettier.io/)**
 - Banco de dados: **[FaunaDB](https://insomnia.rest/)**
 - Teste de API: **[Insomnia](https://fauna.com/)**
